@@ -80,7 +80,7 @@ def test_first_repeated_id_repeat_can_be_first_item() -> None:
 @pytest.mark.parametrize(
     "tags",
     [
-        "",
+        pytest.param("", id="empty"),
         "{[()]}",
         "((()))",
         "[]{}()",
