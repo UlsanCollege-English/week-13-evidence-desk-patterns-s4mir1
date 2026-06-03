@@ -10,19 +10,20 @@ Rules:
 """
 
 from collections import deque
+from typing import Dict, List, Optional
 
 
 # -----------------------------------------------------------------------------
 # Required Problem 1
 # -----------------------------------------------------------------------------
 
-def count_evidence(evidence: list[str]) -> dict[str, int]:
+def count_evidence(evidence: List[str]) -> Dict[str, int]:
     """Return a dictionary counting how many times each evidence label appears.
 
     Pattern: frequency counting
     Data structure: dictionary
     """
-    counts: dict[str, int] = {}
+    counts = {}
 
     for item in evidence:
         counts[item] = counts.get(item, 0) + 1
@@ -34,17 +35,18 @@ def count_evidence(evidence: list[str]) -> dict[str, int]:
 # Required Problem 2
 # -----------------------------------------------------------------------------
 
-def first_repeated_id(ids: list[str]) -> str | None:
+def first_repeated_id(ids: List[str]) -> Optional[str]:
     """Return the first suspect ID that appears a second time.
 
     Pattern: seen before
     Data structure: set
     """
-    seen: set[str] = set()
+    seen = set()
 
     for suspect_id in ids:
         if suspect_id in seen:
             return suspect_id
+
         seen.add(suspect_id)
 
     return None
@@ -60,7 +62,7 @@ def valid_tags(tags: str) -> bool:
     Pattern: stack matching
     Data structure: list used as a stack
     """
-    stack: list[str] = []
+    stack = []
 
     pairs = {
         ")": "(",
@@ -88,7 +90,7 @@ def valid_tags(tags: str) -> bool:
 # Required Problem 4
 # -----------------------------------------------------------------------------
 
-def lookup_alias(aliases: dict[str, str], alias: str) -> str | None:
+def lookup_alias(aliases: Dict[str, str], alias: str) -> Optional[str]:
     """Return the real name connected to an alias.
 
     Pattern: lookup table
@@ -101,14 +103,14 @@ def lookup_alias(aliases: dict[str, str], alias: str) -> str | None:
 # Optional Challenge 1
 # -----------------------------------------------------------------------------
 
-def process_reports(reports: list[str]) -> list[str]:
+def process_reports(reports: List[str]) -> List[str]:
     """Return case reports in first-in, first-out processing order.
 
     Pattern: queue processing
     Data structure: collections.deque
     """
     queue = deque(reports)
-    processed: list[str] = []
+    processed = []
 
     while queue:
         processed.append(queue.popleft())
@@ -120,7 +122,7 @@ def process_reports(reports: list[str]) -> list[str]:
 # Optional Challenge 2
 # -----------------------------------------------------------------------------
 
-def largest_time_gap(times: list[int]) -> int:
+def largest_time_gap(times: List[int]) -> int:
     """Return the largest gap between neighboring event times after sorting.
 
     Pattern: sorting + scan
@@ -130,11 +132,11 @@ def largest_time_gap(times: list[int]) -> int:
         return 0
 
     sorted_times = sorted(times)
-
     largest_gap = 0
 
     for i in range(1, len(sorted_times)):
         gap = sorted_times[i] - sorted_times[i - 1]
+
         if gap > largest_gap:
             largest_gap = gap
 
