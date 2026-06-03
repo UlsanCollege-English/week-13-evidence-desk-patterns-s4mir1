@@ -1,20 +1,12 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/cm6PS4yt)
 # Week 1 Homework: Evidence Desk Patterns
 
 ## Student Name
 
-Write your name here.
+Samir Bhandari
 
 ## Summary
 
-Write 3–6 lines describing what this homework asks you to practice.
-
-Example topics:
-
-- frequency counting with dictionaries
-- duplicate detection with sets
-- stack matching with lists
-- lookup tables with dictionaries
+This homework focuses on practicing common data structure patterns in Python. The tasks include counting occurrences using dictionaries, detecting duplicates using sets, validating balanced brackets using a stack, and performing lookups with dictionaries. It also provides optional challenges involving queue processing with deque and sorting with scanning techniques. These exercises help strengthen problem-solving skills and understanding of fundamental data structures.
 
 ## How to Run Tests
 
@@ -56,31 +48,33 @@ Optional tests are skipped by default. To run them, remove the `@pytest.mark.ski
 
 ### Pattern
 
-Write the pattern name here.
+Frequency Counting
 
 ### Data Structure
 
-Write the data structure here.
+Dictionary
 
 ### Approach
 
-- Step 1:
-- Step 2:
-- Step 3:
+* Step 1: Create an empty dictionary to store counts.
+* Step 2: Loop through each evidence label.
+* Step 3: Update the count for each label and return the dictionary.
 
 ### Complexity
 
-- Time: `O(?)`
-- Space: `O(?)`
+* Time: `O(n)`
+* Space: `O(n)`
 
 Explain briefly:
 
+The function visits each item once and stores counts in a dictionary. The number of dictionary entries depends on the number of unique labels.
+
 ### Edge Cases Checked
 
-- [ ] Empty list
-- [ ] One item
-- [ ] Repeated items
-- [ ] Different labels
+* [x] Empty list
+* [x] One item
+* [x] Repeated items
+* [x] Different labels
 
 ---
 
@@ -88,31 +82,33 @@ Explain briefly:
 
 ### Pattern
 
-Write the pattern name here.
+Seen Before
 
 ### Data Structure
 
-Write the data structure here.
+Set
 
 ### Approach
 
-- Step 1:
-- Step 2:
-- Step 3:
+* Step 1: Create an empty set called `seen`.
+* Step 2: Loop through each ID and check whether it already exists in the set.
+* Step 3: Return the first repeated ID or `None` if no repetition is found.
 
 ### Complexity
 
-- Time: `O(?)`
-- Space: `O(?)`
+* Time: `O(n)`
+* Space: `O(n)`
 
 Explain briefly:
 
+Each lookup and insertion into a set is approximately constant time, making the overall solution efficient.
+
 ### Edge Cases Checked
 
-- [ ] Empty list
-- [ ] No repeated IDs
-- [ ] First two IDs match
-- [ ] Multiple repeated IDs
+* [x] Empty list
+* [x] No repeated IDs
+* [x] First two IDs match
+* [x] Multiple repeated IDs
 
 ---
 
@@ -120,33 +116,35 @@ Explain briefly:
 
 ### Pattern
 
-Write the pattern name here.
+Stack Matching
 
 ### Data Structure
 
-Write the data structure here.
+List Used as a Stack
 
 ### Approach
 
-- Step 1:
-- Step 2:
-- Step 3:
+* Step 1: Create an empty stack and define matching bracket pairs.
+* Step 2: Push opening brackets onto the stack.
+* Step 3: When a closing bracket appears, verify that it matches the most recent opening bracket.
 
 ### Complexity
 
-- Time: `O(?)`
-- Space: `O(?)`
+* Time: `O(n)`
+* Space: `O(n)`
 
 Explain briefly:
 
+The string is scanned once. The stack stores unmatched opening brackets and ensures proper nesting.
+
 ### Edge Cases Checked
 
-- [ ] Empty string
-- [ ] Correctly nested tags
-- [ ] Mismatched tags
-- [ ] Closing tag before opening tag
-- [ ] Unclosed opening tag
-- [ ] Non-bracket characters
+* [x] Empty string
+* [x] Correctly nested tags
+* [x] Mismatched tags
+* [x] Closing tag before opening tag
+* [x] Unclosed opening tag
+* [x] Non-bracket characters
 
 ---
 
@@ -154,29 +152,31 @@ Explain briefly:
 
 ### Pattern
 
-Write the pattern name here.
+Lookup Table
 
 ### Data Structure
 
-Write the data structure here.
+Dictionary
 
 ### Approach
 
-- Step 1:
-- Step 2:
+* Step 1: Check whether the alias exists in the dictionary.
+* Step 2: Return the associated real name or `None`.
 
 ### Complexity
 
-- Time: `O(?)`
-- Space: `O(?)`
+* Time: `O(1)`
+* Space: `O(1)`
 
 Explain briefly:
 
+Dictionary lookups are performed in constant time on average.
+
 ### Edge Cases Checked
 
-- [ ] Known alias
-- [ ] Unknown alias
-- [ ] Empty dictionary
+* [x] Known alias
+* [x] Unknown alias
+* [x] Empty dictionary
 
 ---
 
@@ -184,17 +184,15 @@ Explain briefly:
 
 ## AI Used?
 
-- [ ] Yes
-- [ ] No
+* [x] Yes
+* [ ] No
 
 ## If yes, what did AI help with?
 
-Write 1–3 bullets.
-
--
--
--
+* Reviewed solution logic and complexity analysis.
+* Helped explain data structure patterns used in each problem.
+* Assisted with formatting and completing the README documentation.
 
 ## Other Sources
 
-List any non-course sources you used. If none, write `None`.
+None
